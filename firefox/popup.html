@@ -1,40 +1,30 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Blue Blocker</title>
+		<title>BlockTheBlue</title>
 		<link href="../style.css" rel="stylesheet">
 	</head>
 	<body>
-		<h2><img src="../assets/icon.png" alt="🅱️">lue Blocker</h2>
+		<h2><img src="../assets/icon.png" alt="🅱️">lockTheBlue</h2>
 		<div class="option">
 			<input type="checkbox" id="block-following">
 			<label ref="label" for="block-following" >
 				<div class="checkmark">
 					<div></div>
 				</div>
-				<p>allow blocking of people I follow</p>
+				<p>Allow blocking of people I follow</p>
 			</label>
 			<span id="block-following-status"></span>
 		</div>
 		<div class="option">
-			<input type="checkbox" id="skip-verified">
-			<label ref="label" for="skip-verified" >
+			<input type="checkbox" id="block-legacy">
+			<label ref="label" for="block-legacy" >
 				<div class="checkmark">
 					<div></div>
 				</div>
-				<p>skip users verified by other means</p>
+				<p>Block Legacy verified people</p>
 			</label>
-			<span id="skip-verified-status"></span>
-		</div>
-		<div class="last option">
-			<input type="checkbox" id="block-nft-avatars">
-			<label ref="label" for="block-nft-avatars" >
-				<div class="checkmark">
-					<div></div>
-				</div>
-				<p>block users with NFT avatars</p>
-			</label>
-			<span id="block-nft-avatars-status"></span>
+			<span id="block-legacy-status"></span>
 		</div>
 	</body>
 	<script src="options.js" type="module"></script>

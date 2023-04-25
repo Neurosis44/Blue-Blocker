@@ -1,11 +1,13 @@
-![Blue Blocker Marquee](assets/marquee.png)
-# Blue Blocker
+Thanks to ![kheina-com](https://github.com/kheina-com)'s' ![Blue-Blocker](https://github.com/kheina-com/Blue-Blocker) and ![luiserdef](https://github.com/luiserdef) ![twitter-real-verified](https://github.com/luiserdef/twitter-real-verified)
+
+![BlockTheBlue Marquee](assets/marquee.png)
+# BlockTheBlue
 Blocks all Verified Twitter Blue users on twitter.com
 
 ## Usage
 Nothing! Just install and say goodbye to all the paid blue checkmarks!
 
-By default, Blue Blocker does not block users you follow who have purchased Twitter Blue. You can enable this from the extension settings.
+By default, BlockTheBlue does not block users you follow who have purchased Twitter Blue, and legacy verified accounts. You can enable this from the extension settings.
 
 ## Install
 [![Available from Chrome Webstore](assets/chrome.png)](https://chrome.google.com/webstore/detail/blue-blocker/jgpjphkbfjhlbajmmcoknjjppoamhpmm)
@@ -32,8 +34,5 @@ NOTE: You may need to replace instances of `browser.storage.sync` with `browser.
 ## TODO
 1. Missing support for these requests
 	- search (all types)
-	- quote tweets (the quoted tweet)
 	- "you might like" column
 	- "who to follow" sections
-2. Remove the blocked users from the dom
-3. Look into an issue where users can be missed

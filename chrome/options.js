@@ -2,15 +2,15 @@ import { DefaultOptions } from '../shared.js';
 
 // restore state from storage
 document.addEventListener("DOMContentLoaded", () => {
-	chrome.storage.sync.get(DefaultOptions, items => {
+	chrome.storage.local.get(DefaultOptions, (items) => {
 		document.getElementById("block-following").checked = items.blockFollowing;
-		document.getElementById("skip-verified").checked = items.skipVerified;
-		document.getElementById("block-nft-avatars").checked = items.blockNftAvatars;
+		document.getElementById("block-legacy").checked = items.blockLegacy;
+    document.getElementById("blocked-users-count").textContent = Object.keys(items.blue_blocked_users).length;
 	});
 });
 
 document.getElementById("block-following").addEventListener("input", () => {
-	chrome.storage.sync.set({
+	chrome.storage.local.set({
 		blockFollowing: document.getElementById("block-following").checked,
 	}, () => {
 		// Update status to let user know options were saved.
@@ -20,23 +20,12 @@ document.getElementById("block-following").addEventListener("input", () => {
 	});
 });
 
-document.getElementById("skip-verified").addEventListener("input", () => {
-	chrome.storage.sync.set({
-		skipVerified: document.getElementById("skip-verified").checked,
+document.getElementById("block-legacy").addEventListener("input", () => {
+	chrome.storage.local.set({
+		blockLegacy: document.getElementById("block-legacy").checked,
 	}, () => {
 		// Update status to let user know options were saved.
-		const status = document.getElementById("skip-verified-status");
-		status.textContent = "saved";
-		setTimeout(() => status.textContent = null, 1000);
-	});
-});
-
-document.getElementById("block-nft-avatars").addEventListener("input", () => {
-	chrome.storage.sync.set({
-		blockNftAvatars: document.getElementById("block-nft-avatars").checked,
-	}, () => {
-		// Update status to let user know options were saved.
-		const status = document.getElementById("block-nft-avatars-status");
+		const status = document.getElementById("block-legacy-status");
 		status.textContent = "saved";
 		setTimeout(() => status.textContent = null, 1000);
 	});

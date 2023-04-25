@@ -1,4 +1,4 @@
-const RequestRegex = /^https:\/\/(?:\w+\.)?twitter.com\/[\w\/]+\/(HomeLatestTimeline|UserTweets|timeline\/home\.json|TweetDetail)(?:$|\?)/;
+const RequestRegex = /^https:\/\/(?:\w+\.)?twitter.com\/[\w\/]+\/(HomeLatestTimeline|HomeTimeline|UserTweets|timeline\/home\.json|search\/adaptive.json|TweetDetail)(?:$|\?)/;
 
 (function(xhr) {
 	let XHR = XMLHttpRequest.prototype;
@@ -16,7 +16,7 @@ const RequestRegex = /^https:\/\/(?:\w+\.)?twitter.com\/[\w\/]+\/(HomeLatestTime
 		this._requestHeaders[header] = value;
 		return setRequestHeader.apply(this, arguments);
 	};
-	XHR.send = function(postData) {
+	XHR.send = function() {
 		this.addEventListener("load", function() {
 			// determine if request is a timeline/tweet-returning request
 			const parsedUrl = RequestRegex.exec(this._url);

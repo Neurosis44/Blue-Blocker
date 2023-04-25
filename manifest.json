@@ -1,8 +1,8 @@
 {
 	"manifest_version": 3,
-	"name": "Blue Blocker",
-	"version": "0.1.5",
-	"description": "Blocks all Twitter Blue verified users on twitter.com",
+	"name": "BlockTheBlue",
+	"version": "0.2",
+	"description": "Blocks all Twitter Blue Paying users on twitter.com",
 	"icons": {
 		"128": "assets/icon-128.png"
 	},
@@ -11,7 +11,8 @@
 			"resources": [
 				"chrome/script.js",
 				"shared.js",
-				"inject.js"
+				"inject.js",
+        "legacy-verified-users.js"
 			],
 			"matches": [
 				"*://*.twitter.com/*",
